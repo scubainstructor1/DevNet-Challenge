@@ -1,5 +1,7 @@
 import requests
 import json
+from os import system, name
+system('cls')
 
 print('\nEveryone likes Dad jokes, right?\n')
 
