@@ -18,12 +18,14 @@ def menu():
   print('Enter yes if you\'d like to hear a dad joke')
   print('Enter no if you don\'t')
   print('Enter q to quit')
-  sel = input('Please enter yes, no, or q to quit: ')
+  sel = input('Please enter yes, no, or q to quit: ').lower()
+  if sel == 'q':
+    print('\nSorry to see you go!  Hope you enjoyed the dad jokes!\n')
+  
   return sel
 
 sel = menu()
-while len(sel) == 0:
-   sel = menu()
+
 while sel != 'q':
   if sel == 'yes':
     dadjokes()
@@ -31,6 +33,6 @@ while sel != 'q':
     continue
   elif sel == 'no':
     print('\nWhy don\'t you like dad jokes?\n')
-    sel = 'q'
+    break
   else:
     sel = menu()
