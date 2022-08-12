@@ -24,9 +24,6 @@ def menu():
 sel = menu()
 while len(sel) == 0:
    sel = menu()
-txt = 'yes no q'
-if sel not in txt:
-  sel = menu()
 while sel != 'q':
   if sel == 'yes':
     dadjokes()
