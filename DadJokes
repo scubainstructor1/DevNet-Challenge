@@ -1,9 +1,35 @@
 import requests
+import json
 
-url = 'https://icanhazdadjoke.com/'
-headers = {"Accept": "application/json"}
-response = requests.get(url, headers=headers)
-jsonData = response.json()
-response.status_code
-question = jsonData['joke']
-print(question)
+print('\nEveryone likes Dad jokes, right?\n')
+
+def dadjokes():
+  url = 'https://icanhazdadjoke.com/'
+  headers = {"Accept": "application/json"}
+  response = requests.get(url, headers=headers)
+  jsonData = response.json()
+  response.status_code
+  question = jsonData['joke']
+  print()
+  print(question)
+  print()
+
+def menu():
+  print('Enter yes if you\'d like to hear a dad joke')
+  print('Enter no if you don\'t')
+  print('Enter q to quit')
+  sel = input('Please enter yes, no, or q to quit: ')
+  return sel
+
+sel = menu()
+  
+while sel != 'q':
+  if sel == 'yes':
+    dadjokes()
+    sel = menu()
+    continue
+  elif sel == 'no':
+    print('\nWhy don\'t you like dad jokes?\n')
+    sel = 'q'
+  elif sel == 'q':
+    print('\nthanks for listening to my dad jokes!\n')
