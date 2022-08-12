@@ -22,7 +22,11 @@ def menu():
   return sel
 
 sel = menu()
-  
+while len(sel) == 0:
+   sel = menu()
+txt = 'yes no q'
+if sel not in txt:
+  sel = menu()
 while sel != 'q':
   if sel == 'yes':
     dadjokes()
@@ -31,5 +35,5 @@ while sel != 'q':
   elif sel == 'no':
     print('\nWhy don\'t you like dad jokes?\n')
     sel = 'q'
-  elif sel == 'q':
-    print('\nthanks for listening to my dad jokes!\n')
+  else:
+    sel = menu()
